@@ -8,6 +8,7 @@
     <meta description="Laravel School Digital Library">
     <meta author="Yudha Bionic">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- FONTAWESOME --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -32,18 +33,24 @@
         {{-- MAIN CONTENT --}}
         <div class="w-full h-full pt-16 px-6 flex flex-col gap-2.5">
             @include('partials.admin.heading')
+            <div class="w-full flex items-center justify-between">
+                @include('partials.admin.search')
+                @include('partials.admin.action')
+            </div>
             @include('partials.admin.session')
             @yield('contents')
+            @include('partials.admin.pagination')
         </div>
     </div>
 
     {{-- NAVIGATION BUTTON (MOBILE) --}}
-    @include('partials.admin.navigation-button')
+    {{-- @include('partials.admin.navigation-button') --}}
 
     {{-- FOOTER --}}
     @include('partials.admin.footer')
 
     {{-- FOR SCRIPT --}}
+    @stack('custom-scripts')
 </body>
 
 </html>

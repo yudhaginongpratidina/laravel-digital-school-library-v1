@@ -9,3 +9,24 @@
         </div>
     </div>
 @endif
+
+
+{{-- USER MANAGEMENT --}}
+@if (request()->routeIs('users.index'))
+    <div class="w-full h-[60px] flex items-center justify-between">
+        <div class="h-full flex flex-col justify-center">
+            <h1 class="text-lg font-bold uppercase">users management</h1>
+            <div class="w-[90px] h-0.5 bg-orange-500"></div>
+        </div>
+
+    </div>
+@endif
+
+@if (request()->routeIs('users.create'))
+    <div class="w-full h-[60px] flex items-center justify-between">
+        <div class="h-full flex flex-col justify-center">
+            <h1 class="text-lg font-bold uppercase">create user</h1>
+            <div class="w-[90px] h-0.5 bg-orange-500"></div>
+        </div>
+    </div>
+@endif
